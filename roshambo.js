@@ -10,10 +10,13 @@ function getComputerChoice() {
     } else {
         computerChoice = "gun";
     }
-    console.log(computerChoice);
+    return computerChoice;
 };
-console.log(getComputerChoice())
 
+function getPlayerChoice() {
+    let playerChoice = prompt("rock, paper, or scissors? ");
+    playerChoice = playerChoice.toLowerCase();
+    console.log = playerChoice;
+    return playerChoice;
+}
 
-
-function playRound(computerChoice, playerChoice)
