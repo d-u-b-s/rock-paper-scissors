@@ -10,7 +10,7 @@ function getComputerChoice() {
     } else {
         computerChoice = "gun";
     }
-    console.log(computerChoice);
+    console.log("computer chose " + computerChoice);
     return computerChoice;
 };
 
@@ -21,7 +21,7 @@ function getPlayerChoice() {
         //     playerChoice = "Invalid";
         //     return playerChoice;
         // }
-    console.log(playerChoice);
+    console.log("player chose " + playerChoice);
     return playerChoice;
 }
 
@@ -68,5 +68,36 @@ function playRound() {
         console.log(result);
         return result;    
     }
-    
 };
+
+function game() {
+    let wins = 0
+    let losses = 0
+    for (let i = 0; i < 5; i++) {
+        let result = playRound();
+        if (result == "win") {
+            wins += 1;
+            console.log(result)
+            console.log("wins: " + wins);
+            console.log("losses: " + losses);
+        } else if (result == "lose") {
+            losses += 1;
+            console.log(result)
+            console.log("wins: " + wins);
+            console.log("losses: " + losses);
+        } else if (result == "tie") {
+            wins += 1;
+            losses += 1;
+            console.log(result)
+            console.log("wins: " + wins);
+            console.log("losses: " + losses);
+        }   
+     }
+    if (wins > losses) {
+        console.log("YOU WIN");
+    } else if (losses == wins) {
+        console.log("TIE GAME");
+    } else {
+        console.log("YOU LOSE");
+    }
+} 
